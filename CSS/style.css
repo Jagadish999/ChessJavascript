@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: cursive;
+}
+
+body{
+    background-color: rgba(33, 33, 33, 0.7);
+
+}
+
+.main-container{
+
+    margin-top: 20px;
+
+    height: 95%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: space-evenly;
+}
+
+.game-board{
+    height: 95%;
+    width: 60%;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    background-color: rgba(235, 237, 148, 0.559);
+}
+
+.game-status{
+
+    height: 95%;
+    width: 30%;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    background-color: rgba(235, 237, 148, 0.559);
+
+}
+
+.board-wrapper{
+    display: block;
+
+    height: 100%;
+    width: 100%;
+}
+
+.chessboard{
+
+    display: block;
+
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 550px;
+    width: 550px;
+
+    border: 2px solid black;
+}
+
+.player-detail{
+    padding: 10px;
+    background-color: rgba(33, 33, 33, 0.6);
+
+    display: block;
+
+    margin: auto;
+
+    width: 550px;
+}
+
+.player-info-span{
+    font-size: 32px;
+    color: white
+}
+
+.opp-remaining-time{
+
+    margin-top: 60px;
+
+    background-color: rgba(33, 33, 33, 0.6);
+
+    padding: 15px;
+
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 90%;
+
+    font-size: 32px;
+    color: white;
+}
+
+.game-status-message{
+
+    padding: 15px;
+
+    font-size: 25px;
+
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 90%;
+    height: 300px;
+
+    background-color: aqua;
+}
+
+.your-remaining-time{
+
+    background-color: rgba(33, 33, 33, 0.6);
+
+    padding: 15px;
+
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 90%;
+
+    font-size: 32px;
+    color: white;
+}
