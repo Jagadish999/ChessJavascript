@@ -5,7 +5,27 @@
     <title>Chess</title>
     <link rel="stylesheet" href="CSS/style.css">
 
+    <!--main files for board and globals-->
     <script src="JS/script.js"></script>
+    <script src="JS/globals.js"></script>
+
+    <!--File for demo API-->
+    <script src="JS/Server/api.js"></script>
+
+    <!--Files for board Setup-->
+    <script src="JS/PlayerController/BoardSetup/BlankChessBoard.js"></script>
+    <script src="JS/PlayerController/BoardSetup/ChessPieceSetter.js"></script>
+
+    <!--File for filling chess array-->
+    <script src="JS/PlayerController/ChessBoardArray/ChessBoardArrayFiller.js"></script>
+
+    <!--File for pieces movement detection-->
+    <script src="JS/PlayerController/ChessPiecesMovement/PiecesMovementManager.js"></script>
+    <script src="JS/PlayerController/ChessPiecesMovement/GameStatusChecker.js"></script>
+    <script src="JS/PlayerController/ChessPiecesMovement/FilterMoves.js"></script>
+    <script src="JS/PlayerController/ChessPiecesMovement/UpdatedFenPositionGenerator.js
+    "></script>
+
 </head>
 <body>
     <div class="main-container">
@@ -15,7 +35,7 @@
             <div class="board-wrapper">
 
                 <div class="chessboard">
-                    Chess board with File and Rank
+                    
                 </div>
     
                 <div class="player-detail">
@@ -29,15 +49,17 @@
         <div class="game-status">
 
             <div class="opp-remaining-time">
-                10:12
+                
             </div>
 
             <div class="game-status-message">
-                White is in check
+                <span class="time-status">
+
+                </span>
             </div>
 
             <div class="your-remaining-time">
-                30:12
+                
             </div>
         </div>
     </div>
