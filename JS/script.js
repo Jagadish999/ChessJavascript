@@ -2,8 +2,6 @@
 
 function main(){
 
-    // console.log(apiObject);
-
     //Extract Required information from api
     loadRequiredGlobals();
 
@@ -47,8 +45,6 @@ function checkGameStatus(){
         checkmate = gameStatusCheckerObj.findCheckmate(yourPieceMovements, check);
         stalemate = gameStatusCheckerObj.findStalemate(fenPosition, yourPieceMovements, check, opponentPieceMovements);
 
-        console.log("Check: " + check + " Checkmate: " + checkmate + " Stalemate: " + stalemate);
-
         boardSetup();
         setGameStatusMessages();
 
@@ -61,28 +57,28 @@ function checkGameStatus(){
 
 function setGameStatusMessages(){
     const currentPlayer = playerColor == "w" ? "white" : "black";
-    let message = "";
+    let message = currentPlayer + " to move ";
 
     if(timeOver){
         message = currentPlayer + " lost by Time";
+        checkmateAudio.play();
     }
 
     if(check){
+        checkAudio.play();
         message = currentPlayer + " is in check";
     }
 
     if(stalemate){
+        drawAudio.play();
         message = "Game Ended: Stalemate";
         clearInterval(yourTimeInterval);
     }
 
     if(checkmate){
+        checkmateAudio.play();
         message = currentPlayer + " lost by checkmate";
         clearInterval(yourTimeInterval);
-    }
-
-    if(!stalemate && !checkmate && !check){
-        message = currentPlayer + " to move ";
     }
 
     const messageArea = document.getElementsByClassName('time-status')[0];
@@ -104,8 +100,6 @@ function ownPieceHoverMovementEffect(){
             kingSquare = yourPieceMovements[i].currentSquare;
         }
     }
-
-    console.log("King is in Sq: " + kingSquare);
 
     const rank = [8, 7, 6, 5, 4, 3, 2, 1];
     const file = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -157,6 +151,7 @@ function ownPieceHoverMovementEffect(){
 }
 
 function clickedOnYourPiece(currentSquare, ownPiecesSquare){
+    //Piece Selected
     if(ownPiecesSquare.includes(currentSquare)){
         boardSetup();
         ownPieceHoverMovementEffect();
@@ -166,6 +161,17 @@ function clickedOnYourPiece(currentSquare, ownPiecesSquare){
     //if clicked in moveable square of capturable squares
     if(clickedPieceDetails != null){
         if(clickedPieceDetails.availableCaptures.includes(currentSquare) || clickedPieceDetails.availableSquares.includes(currentSquare) || clickedPieceDetails.castelSquare.includes(currentSquare) || clickedPieceDetails.unphasantSquare.includes(currentSquare)){
+
+            if(clickedPieceDetails.availableSquares.includes(currentSquare)){
+                moveAudio.play();
+            }
+            else if(clickedPieceDetails.availableCaptures.includes(currentSquare) || clickedPieceDetails.unphasantSquare.includes(currentSquare)){
+                captureAudio.play();
+            }
+            else if(clickedPieceDetails.castelSquare.includes(currentSquare)){
+                castlingAudio.play();
+            }
+            
             movedSquare = currentSquare;
             //now send this to server movedSquare and pieceSquare
             //for now lets continue in generateFenPosition function
@@ -223,7 +229,6 @@ function highLightMovescaptures(){
             }
         }
     }
-
 }
 
 function findPieceByCurrentSquare(currentSquare){

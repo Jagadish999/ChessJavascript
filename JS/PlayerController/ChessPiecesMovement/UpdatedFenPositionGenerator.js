@@ -64,6 +64,14 @@ class UpdatedFenPositionGenerator{
                 tempChessBoardArray[(this.movedSquare - 1) - 8] = 0;
 
             }
+            else if(pieceName == 'P' && (this.movedSquare >= 57 && this.movedSquare <= 64)){
+                tempChessBoardArray[this.clickedPieceDetail.currentSquare - 1] = 0;
+                tempChessBoardArray[this.movedSquare - 1] = 'Q';
+            }
+            else if(pieceName == 'p' && (this.movedSquare >= 1 && this.movedSquare <= 8)){
+                tempChessBoardArray[this.clickedPieceDetail.currentSquare - 1] = 0;
+                tempChessBoardArray[this.movedSquare - 1] = 'q';
+            }
             else{
                 
                 tempChessBoardArray[this.clickedPieceDetail.currentSquare - 1] = 0;

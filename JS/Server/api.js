@@ -2,10 +2,10 @@
 Assumed that this api will be received from server
 */
 let apiObject = {
-    fenPosition : "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq f6 0 1",
+    fenPosition : "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
     playerWhite : "Jagadish Parajuli",
     playerBlack : "Surab Parajuli",
-    whiteTimeRemaining : 603,
+    whiteTimeRemaining : 300,
     blackTimeRemaining : 500,
     castelDetails : {
 
