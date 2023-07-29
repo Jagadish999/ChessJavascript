@@ -5,8 +5,8 @@ let apiObject = {
     fenPosition : "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
     playerWhite : "Jagadish Parajuli",
     playerBlack : "Surab Parajuli",
-    whiteTimeRemaining : 300,
-    blackTimeRemaining : 500,
+    whiteTimeRemaining : 300000,
+    blackTimeRemaining : 500000,
     castelDetails : {
 
         whiteKingMoved : false,
@@ -30,6 +30,8 @@ let apiObject = {
         blackQueenSideSquaresChecked : false
     }
 }
+
+console.log(apiObject.fenPosition.split("/"));
 
 function fillNewFenPosition(newfenPos, castelInfos){
 

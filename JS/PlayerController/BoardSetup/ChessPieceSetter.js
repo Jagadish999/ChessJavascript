@@ -10,6 +10,10 @@ class ChessPieceSetter{
         this.playerColor = playerColor;
     }
 
+    // sleep(ms) {
+    //     return new Promise(resolve => setTimeout(resolve, ms));
+    // }
+    
     //set pieces according to fen position
     setPieces(){
 
@@ -48,12 +52,14 @@ class ChessPieceSetter{
             }
         }
 
-        // if(this.playerColor == 'b'){
-        //     return this.rotateBrdAndPieces(this.board);
-        // }
+        if(this.playerColor == 'b'){
+            // await this.sleep(200);
+            return this.rotateBrdAndPieces(this.board);
+        }
         return this.board;
     }
 
+    
     //If player is black rotate the board
     rotateBrdAndPieces(board){
         board.style.position = "relative";
